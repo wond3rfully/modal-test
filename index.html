@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+        window.addEventListener('DOMContentLoaded', function(){
+            const $btnShow= document.querySelector('[data-modal]')
+            $btnShow.addEventListener('click', function(){
+                const id = $btnShow.getAttribute('data-modal');
+                const $modal = document.getElementById(id)
+                if($modal){
+                    $modal.classList.add('visible')
+                }
+            })
+        })
+
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
     <title>Modal Test</title>
 </head>
 <body>
     <button class="btn" data-modal="myModal">Show Modal</button>
-    <div class="modal">
-        <div class="modal-content" id="myModal">
+    <div class="modal" id="myModal">
+        <div class="modal-content">
             <div class="up">
                 <p>Modal</p>
                 <p>X</p>
